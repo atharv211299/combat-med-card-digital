@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,19 +36,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -96,6 +90,57 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-military-green text-military-text;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  .tccc-section {
+    @apply bg-military-lightgreen rounded-md p-4 border border-military-accent mb-4 shadow-lg;
+  }
+
+  .tccc-section-title {
+    @apply text-xl font-bold mb-3 text-military-text border-b border-military-accent pb-2;
+  }
+
+  .tccc-input {
+    @apply bg-military-green border border-military-accent rounded py-2 px-3 
+           text-military-text placeholder-military-muted w-full focus:outline-none 
+           focus:ring-2 focus:ring-military-accent focus:border-transparent;
+  }
+
+  .tccc-label {
+    @apply block font-medium text-military-text mb-1;
+  }
+
+  .tccc-checkbox-label {
+    @apply inline-flex items-center cursor-pointer text-military-text;
+  }
+
+  .tccc-button {
+    @apply px-4 py-2 bg-military-accent text-military-text rounded font-bold 
+           hover:bg-opacity-80 transition-colors shadow-md focus:outline-none 
+           focus:ring-2 focus:ring-military-text focus:ring-opacity-50;
+  }
+
+  .tccc-tab {
+    @apply px-4 py-2 rounded-t-md font-semibold;
+  }
+
+  .tccc-tab-active {
+    @apply bg-military-lightgreen text-military-text border-t border-l border-r border-military-accent;
+  }
+
+  .tccc-tab-inactive {
+    @apply bg-military-green text-military-muted hover:bg-military-lightgreen hover:bg-opacity-50 transition-colors;
+  }
+
+  .tccc-form-group {
+    @apply mb-4;
+  }
+
+  .tccc-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-4;
   }
 }
